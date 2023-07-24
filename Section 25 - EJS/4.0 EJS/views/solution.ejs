@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekday Warrior</title>
+</head>
+
+<body>
+  <h1>Hey, it's <%= dayType %>, <%= advice %>!</h1>
+  <h2>Hello, <%= myName %></h2>
+
+  <ul>
+    <% for (let i = 0; i < isFruit.length; i++) { %>
+      <li>
+        <%= isFruit[i] %>
+      </li>
+    <% } %>
+  </ul>
+
+  <hr>
+
+  <h1>
+    <%= data.title %>
+  </h1>
+  <p>Current Second : <%= data.seconds %></p>
+  <% if (data.seconds % 2 === 0) { %>
+    <ul>
+      <% for (let i = 0; i < data.items.length; i++) { %>
+        <li><%= data.items[i] %></li>
+      <% } %>
+    </ul>
+  <% } else { %>
+    <p>No items to display</p>
+  <% }%> 
+  
+  <p><%- data.htmlContent %></p>
+
+  <footer>
+    <p>Copyright &copy; footer</p>
+  </footer>
+</body>
+
+</html>

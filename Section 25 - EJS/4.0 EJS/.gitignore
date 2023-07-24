@@ -1,0 +1,6 @@
+# Mengabaikan file sistem Mac
+.DS_store
+# Mengabaikan folder node_modules
+node_modules
+# Mengabaikan file yang terkait dengan API key
+.env
