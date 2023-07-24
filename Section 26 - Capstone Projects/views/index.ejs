@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+<div class="box" id="heading">
+  <h1>Work List</h1>
+</div>
+<div class="box">
+  <% if (locals.list) { %>
+  <div>
+    <% for (let i = 0; i < list.length; i++) { %>
+    <div class="item">
+      <input type="checkbox" name="" id="" />
+      <p><%= list[i] %></p>
+    </div>
+    <% } %>
+  </div>
+  <% } else { %>
+  <p>To do list is empty</p>
+  <% } %>
+
+  <form class="item" action="/submit" method="POST">
+    <input type="text" name="newList" placeholder="New Item" />
+    <button type="submit" name="list" value="Work">+</button>
+  </form>
+</div>
+<%- include("partials/footer.ejs") %>

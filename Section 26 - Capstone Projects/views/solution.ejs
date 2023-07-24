@@ -1,0 +1,32 @@
+<!-- Step 3 Add Header -->
+<%- include("partials/header.ejs") %>
+
+<!-- Step 2 - If an adjective and noun are sent to this ejs file, 
+    Change the h1 to show the adjective and noun.
+    But when the user first goes on the website and there is no adjective and noun, 
+    Show the default h1 below -->
+<div class="box" id="heading">
+<h1>Work List</h1>
+</div>
+<main>
+<div class="box">
+<% if (locals.list) { %>
+  <div>
+    <% for (let i = 0; i < list.length; i++) { %>
+      <div class="item">
+      <input type="checkbox" name="" id="">
+      <p><%= list[i] %></p>
+      </div>
+    <% } %>
+  </div>
+<% } else { %>
+  <p>To do list is empty</p>
+<% } %>
+
+<form class="item" action="/submit" method="POST">
+  <input type="text" name="newList" placeholder="New Item">
+  <button type="submit" name="list" value="Work">+</button>
+</form>
+</div>
+</main>
+<!-- Step 3 Add Footer -->
